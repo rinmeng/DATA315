@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738283864.34005 "/Users/rin/eclipse-workspace/DATA315/a1/a1.tex" "a1.pdf" "a1" 1738283866.10144 0
+["pdflatex"] 1738285486.10958 "/Users/rin/eclipse-workspace/DATA315/a1/a1.tex" "a1.pdf" "a1" 1738285487.14853 0
   "/Users/rin/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/Users/rin/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/Users/rin/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -31,6 +31,8 @@
   "/Users/rin/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1248133631 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "/Users/rin/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1248133631 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "/Users/rin/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
+  "/Users/rin/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
+  "/Users/rin/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty" 1591045760 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
@@ -45,6 +47,7 @@
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo" 1717359999 8449 30d84ec2eac77409e31fe51403c1ed64 ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/changepage/changepage.sty" 1256071977 4523 a9044e2dc40e764dac60d2acda7ae919 ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1728420100.25583 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def" 1713382759 19440 9da9dcbb27470349a580fca7372d454b ""
   "/Users/rin/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty" 1717359999 18363 b79c83eab17bf475b508f05e9807e605 ""
@@ -57,9 +60,9 @@
   "/Users/rin/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1727857643 93453 ee14a1eb4e08d3cf56fad19be40f22a7 ""
   "/Users/rin/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1727857668 1901502 824aaf3fdf1ffb9f98b249d75d249d7b ""
   "/Users/rin/Library/TinyTeX/texmf.cnf" 1726167582.34247 708 85fd07691b6294ba94c59dbc62380410 ""
-  "/Users/rin/eclipse-workspace/DATA315/a1/a1.tex" 1738283863.87082 9837 6e95e11153ac8ab903b2c9911a812153 ""
-  "a1.aux" 1738283865.96549 32 f852561997c05a7d986acd1deeb530ec "pdflatex"
-  "a1.tex" 1738283863.87082 9837 6e95e11153ac8ab903b2c9911a812153 ""
+  "/Users/rin/eclipse-workspace/DATA315/a1/a1.tex" 1738285484.53807 9880 4d7d78090ab8b05703406900c0c16837 ""
+  "a1.aux" 1738285487.06976 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
+  "a1.tex" 1738285484.53807 9880 4d7d78090ab8b05703406900c0c16837 ""
   "traceplot.png" 1738283216.04511 674938 bed7e1ec110f4d19131b71651d6a9d58 ""
   (generated)
   "a1.aux"
