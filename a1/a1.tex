@@ -47,14 +47,14 @@
 > print(paste("Sample Standard Deviation:", sample_sd))
 [1] "Sample Standard Deviation: 1.31829852597076"
     \end{verbatim}
-    \item  Suppose $Z1, Z2 \text{ and } Z3$ are independent standard normal random variables.
-    Write down the joint pdf for $Z1, Z2 \text{ and } Z3$.
+    \item  Suppose $Z_1, Z_2 \text{ and } Z_3$ are independent standard normal random variables.
+    Write down the joint pdf for $Z_1, Z_2 \text{ and } Z_3$.
     \begin{align*}
         f(z_1, z_2, z_3) &= f(z_1) f(z_2) f(z_3) \\
         &= \frac{1}{\sqrt{2\pi}} e^{-\frac{z_1^2}{2}} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{z_2^2}{2}} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{z_3^2}{2}} \\
         &= \frac{1}{(2\pi)^{3/2}} e^{-\frac{z_1^2 + z_2^2 + z_3^2}{2}}
     \end{align*}
-    \item  Suppose $Z1, Z2, \ldots , Zn$ are time series with white noise model
+    \item  Suppose $Z_1, Z_2, \ldots , Z_n$ are time series with white noise model
     \[ z_t = \varepsilon_t \]
     where $\varepsilon_t$ is independent random variable with exponiential distribution $exp(\lambda)$.
     Find the maximum likelihood estimator for $\lambda$.
@@ -136,13 +136,65 @@
 
         \begin{enumerate}
             \item Find the distribution of the statistic \( \tau \) for the Mann-Kendall test.
-            Since it is a time series wiht $n = 4$, then we would have
+           
+            Since it is a time series with $n = 4$, then we would have $\frac{4(4-1)}{2} = 6$ pairs $(x_i, x_j)$ 
+            where $i < j$. Under $H_0$ (no trend), the probability of $x_i > x_j$ is the same as $x_i < x_j$. 
+            The possible values of $S$ and their probabilities are derived from all $4\! = 24$ possible permutations of the data.
+            \begin{table}[h]
+                \centering
+                \begin{tabular}{c c c c c c c c}
+                    \hline
+                    $S$ & -6 & -4 & -2 & 0 & 2 & 4 & 6 \\
+                    \hline
+                    Count & 1 & 3 & 5 & 6 & 5 & 3 & 1 \\
+                    \hline
+                    $P(\tau)$
+                    &  $\frac{1}{24}$ & $\frac{3}{24}$ & $\frac{5}{24}$ & $\frac{6}{24}$ & $\frac{5}{24}$ & $\frac{3}{24}$ & $\frac{1}{24}$ \\
+                    \hline
+                \end{tabular}
+            \end{table}
+            The statistic $\tau = \frac{S}{6}$ scales $S$ to the range $[-1, 1]$. The distribution of $\tau$ is:
+            \[\tau = \{-1, -\frac{2}{3}, -\frac{1}{3}, 0, \frac{1}{3}, \frac{2}{3}, 1\}\]
+            \[P(\tau) = \{\frac{1}{24}, \frac{4}{24}, \frac{6}{24}, \frac{1}{24}, \frac{6}{24}, \frac{4}{24}, \frac{1}{24}\}\]
+            \item Verify in these cases that the variance of \( \tau \) is \( \frac{2(2n+5)/9}{n(n-1)} \).
             
-            
-            \item Verify in these cases that the variance of \( \tau \) is \( \frac{2(2n+5)9}{n(n-1)} \).
+            Variance of $S$ (no tied values) is given by:
+            \[ \text{Var}(S) = \frac{n(n-1)(2n+5)}{18} = \frac{4 \cdot 3 \cdot 13}{18} = 8.67 \]
+            Variance of $\tau$ is given by:
+            \[ \text{Var}(\tau) = \frac{Var(S)}{\frac{n(n-1)}{2}^2} = \frac{8.67}{6^2} = 0.24 \]
+            Given formula:
+            \[ \frac{2(2n+5)/9}{n(n-1)} = \frac{2(2 \cdot 4 + 5)/9}{4(4-1)} = \frac{18/9}{12} = 0.24 \]
+            $\therefore$ This formula holds for $n = 4$.
             \item Suppose \( z_1, z_2, z_3, z_4 \) are \( 0.2, 0.25, 0.22, 0.3 \). Perform the Mann-Kendall test using the exact distribution you have derived.
+            
+            Calculate $S$:
+            \begin{align*}
+                \text{For i = 1: } S &= 1 + 1 + 1 = 3 \\
+                \text{For i = 2: } S &= -1 + 1 = 0 \\
+                \text{For i = 3: } S &= 1 = 1 \\
+                \text{Total } S &= 3 + 0 + 1 = 4
+            \end{align*}
+            \[ \tau = \frac{S}{\frac{n(n-1)}{2}} = \frac{4}{6} = \frac{2}{3} = 0.6667 \]
+
+            From part (a) the distribution of $S$ for $n = 4$ is:
+
+            \begin{table}[h]
+                \centering
+                \begin{tabular}{c c c c c c c c}
+                    \hline
+                    $S$ & -6 & -4 & -2 & 0 & 2 & 4 & 6 \\
+                    \hline
+                    Count & 1 & 3 & 5 & 6 & 5 & 3 & 1 \\
+                    \hline
+                    $P(\tau)$
+                    &  $\frac{1}{24}$ & $\frac{3}{24}$ & $\frac{5}{24}$ & $\frac{6}{24}$ & $\frac{5}{24}$ & $\frac{3}{24}$ & $\frac{1}{24}$ \\
+                    \hline
+                \end{tabular}
+            \end{table}
         \end{enumerate}
-        
+        Observed $S = 4$, probability = $\frac{3}{24}$. Two-tailed p-value: 
+        \[P(|S|) \geq 4 =  \text{p-value} = \frac{3 + 1 + 3 + 1}{24} = \frac{8}{24} = 0.3333 \]
+        Since $0.3333 > 0.05$, we fail to reject the null hypothesis. There is no evidence of a trend in the data.
     \item The data in \verb|DAAG::vlt$prize| consist of a time series of observations of prize
         winnings (in dollars) taken on a video lottery terminal in a sequence of 345 plays. Obtain
         a trace plot of the series and conduct a trend test. Is there strong evidence of a decrease
@@ -175,12 +227,28 @@ tau = 0.0367, 2-sided pvalue = 0.3973
     Conduct the Mann-Kendall trend test by hand, using the following steps.
     \begin{enumerate}
         \item Calculate the value of $\tau$ showing the steps that you are using.
-        
+        \[ \tau = \frac{S}{\frac{n(n - 1)}{2}} \]
+        \[S = \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \text{sign}(x_j - x_i)\]
+        Using the formula, we have:
+        \begin{align*}
+        \text{For i = 1: } S &= -1 + 1 + 1 + 1 + 1 = 3 \\
+        \text{For i = 2: } S &= 1 + 1 + 1 + 1 = 4 \\
+        \text{For i = 3: } S &= 1 + 1 + 1 = 3 \\
+        \text{For i = 4: } S &= -1 - 1 = -2 \\
+        \text{For i = 5: } S &= -1 \\
+        \text{Total } S &= 3 + 4 + 3 - 2 - 1 = 7
+        \end{align*}
+        \[ \tau = \frac{7}{\frac{6 \cdot 5}{2}} = \frac{7}{15} = 0.4667 \]
         \item Calculate the variance of $\tau$ under the null hypothesis.
-        
+        For $n = 6$, the variance of $\tau$ (no tied values) is given by:
+        \[ \text{Var}(S) = \frac{n(n-1)(2n+5)}{18} = \frac{6 \cdot 5 \cdot 17}{18} = 28.33 \]
+        \[ \text{Var}(\tau) = \frac{Var(S)}{\frac{n(n-1)}{2}^2} = \frac{28.33}{15^2} = 0.126 \]
         \item Under the approximate normal assumption, calculate the test statistic using \(\tau\) and the standard error. 
         What would you conclude from this test?
-        
+        Test statistic $Z$ (using $\tau$ and standard error) is given by:
+        \[ Z = \frac{\tau}{\sqrt{\text{Var}(\tau)}} = \frac{0.4667}{\sqrt{0.126}} = 1.315 \]
+        The critical value for a two-tailed test at $\alpha = 0.05$ is 1.96. Since $Z = 1.315 < 1.96$, we fail to reject the null hypothesis.
+        There is insufficient evidence to suggest that there is a trend in the data.
     \end{enumerate}
 \end{enumerate}
 
