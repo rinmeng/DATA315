@@ -536,7 +536,64 @@ main="x_t vs. x_{t-2} with noise")
         then it must be true that 
         \[ \text{Error} \sim N(0, 1) \]
     \end{enumerate}
-    \item 
+    \item \begin{enumerate}
+        The AR(1) model with mean 0 is given by
+    \[ x_t = \phi x_{t-1} + z_t \]
+    where $z_t \sim N(0, \sigma^2)$.
+    Then it must be true that the matrix form looks something like this
+    \[
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3 \\
+        \vdots \\
+        x_n
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \phi & 0 & 0 & \cdots & 0 \\
+        1 & \phi & 0 & \cdots & 0 \\
+        0 & 1 & \phi & \cdots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \cdots & \phi
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_0 \\
+        x_{1} \\
+        x_{2} \\
+        \vdots \\
+        x_{n-1}
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        \epsilon_1 \\
+        \epsilon_2 \\
+        \epsilon_3 \\
+        \vdots \\
+        \epsilon_n
+    \end{bmatrix}
+    \]
+    The backshift operator $B$ is defined as
+    \[ Bx_t = x_{t-1} \]
+    then, the AR(1) model can be written as
+    \[ e_t = x_t - \phi x_{t-1} \]
+    \[ (1 - \phi B)x_t = e_t \]
+    \item Yes, any process can be written in terms of $\epsilon_t$.
+    An AR(1) is a process that can be express as a sum of
+    past shocks $\epsilon_t$, if we write it recursively,
+    \[ x_t = \phi x_{t-1} + \epsilon_t \]
+    Substituting $x_{t-1} = \phi x_{t-2} + \epsilon_{t-1}$,
+    \[ x_t = \phi(\phi x_{t-2} + \epsilon_{t-1}) + \epsilon_t \]
+    \[ = \phi^2 x_{t-2} + \phi \epsilon_{t-1} + \epsilon_t \]
+    Repeating this, we can get
+    \[ x_t = \sum_{k=0}^{\infty} \phi^k \epsilon_{t-k} \]
+    and this sum converges if $|\phi| < 1$, but if
+    $|\phi| < 1$, then the process is stationary,
+    and the sum can be fully written in terms of $\epsilon_t$.
+    If $|\phi| \geq 1$, then the process is non-stationary,
+    and the sum does not converge, whcih cannot be fully
+    written in terms of $\epsilon_t$.
+    \end{enumerate}
     
 \end{enumerate}
 \end{document}
