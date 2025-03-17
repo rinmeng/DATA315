@@ -504,6 +504,39 @@ main="x_t vs. x_{t-2} with noise")
     \item The given TS
     \[ x_t = 0.8x_{t-1} + z_t \]
     $z_t \sim N(0, 1)$ and $x_0 = 0$.
+    \begin{enumerate}
+        \item The distribution of $x_1$ its
+        \[ x_1 = 0.8x_0 + z_1 = 0.8(0) + z_1 = z_1 \]
+        \[ E[x_1] = 0 \]
+        \[ Var[x_1] = 1 \]
+        Since $z_1 \sim N(0, 1)$, $x_1 \sim N(0, 1)$.
+        \item The distribution of $x_2$ is
+        \[ x_2 = 0.8x_1 + z_2 = 0.8z_1 + z_2 \]
+        \[ E[x_2] = 0 \]
+        \[ 
+        Var[x_2] = Var(0.8x_1) + Var(z_2) 
+        = 0.8^2(1) + 1 = 1.64 
+        \]
+        Since $z_1, z_2 \sim N(0, 1)$, $x_2 \sim N(0, 1.64)$.
+        \item The distribution of $x_3$ is
+        \[ x_3 = 0.8x_2 + z_3 = 0.8(0.8z_1 + z_2) + z_3 \]
+        \[ = 0.64z_1 + 0.8z_2 + z_3 \]
+        \[ E[x_3] = 0 \]
+        \[ 
+        Var[x_3] = Var(0.8z_2) + Var(z_3) 
+        =  0.8^2(1.64) + 1 = 2.0496 
+        \]
+        Since $z_1, z_2, z_3 \sim N(0, 1)$, $x_3 \sim N(0, 2.0496)$.
+        \item If $x_2$ takes the value 3, the point prediction for $x_3$ is
+        \[ E[x_3 | x_2 = 3] = 0.64(0) + 0.8(3) = 2.4 \]
+        \item The distribution of the prediction error its
+        \[ \text{Error} = x_3 - E[x_3 | x_2] \]
+        Since $x_3 = 0.8x_2 + z_3$ and $E[x_3 | x_2] = 0.8x_2$,
+        \[ \text{Error} = (0.8x_2 + z_3) - 0.8x_2 = z_3 \]
+        then it must be true that 
+        \[ \text{Error} \sim N(0, 1) \]
+    \end{enumerate}
+    \item 
     
 \end{enumerate}
 \end{document}
