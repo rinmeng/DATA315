@@ -460,11 +460,37 @@ main="x_t vs. x_{t-2} with noise")
         \]
         \item The sketched plot of $x_t$ vs. $x_{t-1}$ is
         for $t = 2, 3, \ldots, 10$ is shown below.
+\begin{verbatim}
+# Initial conditions
+x_values <- numeric(11)
+x_values[1] <- 2  # x0
+x_values[2] <- 1  # x1
+
+# Compute xt for t = 2 to 10 using 
+# recurrence relation xt = 0.8*xt-1 - 0.7*xt-2
+for (t in 3:11) {
+x_values[t] <- 0.8 * x_values[t-1] - 0.7 * x_values[t-2]
+}
+
+# Extract values for plotting
+x_t <- x_values[3:11]      # From t=2 to 10
+x_t_minus_1 <- x_values[2:10]  # From t=1 to 9
+x_t_minus_2 <- x_values[1:9]   # From t=0 to 8
+
+# Plot x_t vs. x_{t-1}
+plot(x_t_minus_1, x_t, type="b", col="blue", pch=16,
+xlab="x_{t-1}", ylab="x_t", main="x_t vs. x_{t-1}")
+\end{verbatim}
         \begin{center}
             \includegraphics[width=0.7\textwidth]{Rplot10.png}
         \end{center}
         \item The sketched plot of $x_t$ vs. $x_{t-2}$ is
         for $t = 2, 3, \ldots, 10$ is shown below.
+\begin{verbatim}
+# Plot x_t vs. x_{t-2}
+plot(x_t_minus_2, x_t, type="b", col="red", pch=16,
+xlab="x_{t-2}", ylab="x_t", main="x_t vs. x_{t-2}")
+\end{verbatim}
         \begin{center}
             \includegraphics[width=0.7\textwidth]{Rplot11.png}
         \end{center}
@@ -497,11 +523,40 @@ main="x_t vs. x_{t-2} with noise")
             \]
             \item The sketched plot of $x_t$ vs. $x_{t-1}$ is
             for $t = 2, 3, \ldots, 10$ is shown below.
+\begin{verbatim}
+# Part (d): Compute with noise
+z_values <- c(-1.2, 0.2, -1.0, 0.5, 1.7, 
+-0.5, -2.1, 1.0, 0.8, -0.1)
+x_values_noise <- numeric(11)
+x_values_noise[1] <- 2
+x_values_noise[2] <- 1
+
+for (t in 3:11) {
+x_values_noise[t] <- 0.8 * x_values_noise[t-1] 
+- 0.7 * x_values_noise[t-2] + z_values[t-2]
+}
+
+# Extract noisy values
+x_t_noise <- x_values_noise[3:11]
+x_t_minus_1_noise <- x_values_noise[2:10]
+x_t_minus_2_noise <- x_values_noise[1:9]
+
+# Plot x_t vs. x_{t-1} with noise
+plot(x_t_minus_1_noise, x_t_noise, type="b", 
+col="green", pch=16,
+xlab="x_{t-1}", ylab="x_t", 
+main="x_t vs. x_{t-1} with noise")
+\end{verbatim}
             \begin{center}
                 \includegraphics[width=0.7\textwidth]{Rplot12.png}
             \end{center}
             \item The sketched plot of $x_t$ vs. $x_{t-2}$ is
             for $t = 2, 3, \ldots, 10$ is shown below.
+\begin{verbatim}
+# Plot x_t vs. x_{t-2} with noise
+plot(x_t_minus_2_noise, x_t_noise, type="b", col="purple", pch=16,
+xlab="x_{t-2}", ylab="x_t", main="x_t vs. x_{t-2} with noise")
+\end{verbatim}
             \begin{center}
                 \includegraphics[width=0.7\textwidth]{Rplot13.png}
             \end{center}
