@@ -93,7 +93,7 @@ acf(diff_log_dax, main = "ACF of Log Returns of DAX")
     \[
         X_t = \mu_t + \epsilon_t + \theta \epsilon_{t-1}
     \]
-    How we have to test whether the MA parameter is equal 
+    Now we have to test whether the MA parameter is equal 
     to 0.
 \begin{verbatim}
 # Print the model summary
@@ -130,7 +130,13 @@ p_value
 \end{verbatim}
     The fitted model is $X_t = 4.6223 + \epsilon_t + 0.2260 \epsilon_{t-1}$.
     Since the p-value is less than 0.05, we reject the null hypothesis that the MA parameter is equal to 0.
-    
+    Forecasting the 2nd and 3rd values after the end of the series, we can use
+    \[
+        X_{t+1} = 4.6223 + \epsilon_{t+1} + 0.2260 \epsilon_t
+    \]
+    \[
+        X_{t+2} = 4.6223 + \epsilon_{t+2} + 0.2260 \epsilon_{t+1}
+    \]
     \item The portmanteau test checks whether the residuals
     from our fitted MA(1) model behave like white noise, meaning they are uncorrelated.
     We can use the Box-Ljung test to check this.
