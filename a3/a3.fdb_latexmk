@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1742251706.91796 "c:/Users/agarp/data315/a3/a3.tex" "a3.pdf" "a3" 1742251707.35337 0
+["pdflatex"] 1742253623.37231 "c:/Users/agarp/data315/a3/a3.tex" "a3.pdf" "a3" 1742253623.83576 0
   "Rplot.png" 1742158426 4775 fa0a2eb5f51f0adb31b223238de8b5c4 ""
   "Rplot01.png" 1742158758 4324 b1054b4114ba3ffc4edb31ccc40a22e9 ""
   "Rplot02.png" 1742159073 4958 f956cb055943fa20bc238e9e328ad736 ""
@@ -14,8 +14,10 @@
   "Rplot11.png" 1742177781 5669 1cc50d6c5cf2457658c558d990f9c6af ""
   "Rplot12.png" 1742177786 5684 fdc8a48a551bfbaea309b0935ab496df ""
   "Rplot13.png" 1742177790 6175 420f56280ad7566a4de0bf5a5e334f6a ""
-  "a3.aux" 1742251707 33 7c0742bf35ce21725e3e7ead3b0fecc6 "pdflatex"
-  "a3.tex" 1742251706 22528 20cfe699bbf876f8cfc5199bb7e691e9 ""
+  "Rplot14.png" 1742253601 5566 449122cafd0285a7e4d7c0f6dd6127b4 ""
+  "Rplot15.png" 1742253620 5379 fed5032ae57b6d1af6275b44b38d76f3 ""
+  "a3.aux" 1742253623 33 335403d078a7844e2f506daeffb2ed95 "pdflatex"
+  "a3.tex" 1742253623 23696 51ffaad44a1ebb9689ac66106c53e3e0 ""
   "c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1726521896 1004 54797486969f23fa377b128694d548df ""
   "c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1726521896 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1726521896 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -73,7 +75,7 @@
   "c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1733129488 94778 586128d0518932816a6219e97e511aa0 ""
   "c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1733129511 1918198 adb253c7b6f66147b503d78b131b1ea7 ""
   "c:/Users/agarp/AppData/Roaming/TinyTeX/texmf.cnf" 1726521909 956 26ec9cd9a5edcbea822f9dddc1187176 ""
-  "c:/Users/agarp/data315/a3/a3.tex" 1742251706 22528 20cfe699bbf876f8cfc5199bb7e691e9 ""
+  "c:/Users/agarp/data315/a3/a3.tex" 1742253623 23696 51ffaad44a1ebb9689ac66106c53e3e0 ""
   (generated)
   "a3.aux"
   "a3.log"

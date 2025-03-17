@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.2)  17 MAR 2025 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.2)  17 MAR 2025 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -304,69 +304,84 @@ File: Rplot09.png Graphic file (type png)
 <use Rplot09.png>
 Package pdftex.def Info: Rplot09.png  used on input line 477.
 (pdftex.def)             Requested size: 317.07614pt x 317.09575pt.
+<Rplot14.png, id=72, 451.6875pt x 451.6875pt>
+File: Rplot14.png Graphic file (type png)
+<use Rplot14.png>
+Package pdftex.def Info: Rplot14.png  used on input line 503.
+(pdftex.def)             Requested size: 317.07614pt x 317.09575pt.
 
 
 [14 <./Rplot09.png>]
-<Rplot10.png, id=76, 451.6875pt x 451.6875pt>
+<Rplot15.png, id=77, 451.6875pt x 451.6875pt>
+File: Rplot15.png Graphic file (type png)
+<use Rplot15.png>
+Package pdftex.def Info: Rplot15.png  used on input line 519.
+(pdftex.def)             Requested size: 317.07614pt x 317.09575pt.
+
+
+[15 <./Rplot14.png>]
+
+[16 <./Rplot15.png>]
+<Rplot10.png, id=86, 451.6875pt x 451.6875pt>
 File: Rplot10.png Graphic file (type png)
 <use Rplot10.png>
-Package pdftex.def Info: Rplot10.png  used on input line 524.
+Package pdftex.def Info: Rplot10.png  used on input line 564.
 (pdftex.def)             Requested size: 317.07614pt x 317.09575pt.
-<Rplot11.png, id=77, 451.6875pt x 451.6875pt>
+<Rplot11.png, id=87, 451.6875pt x 451.6875pt>
 File: Rplot11.png Graphic file (type png)
 <use Rplot11.png>
-Package pdftex.def Info: Rplot11.png  used on input line 534.
+Package pdftex.def Info: Rplot11.png  used on input line 574.
 (pdftex.def)             Requested size: 317.07614pt x 317.09575pt.
 
 
-[15 <./Rplot10.png>]
+[17 <./Rplot10.png>]
 
-[16 <./Rplot11.png>]
-<Rplot12.png, id=86, 451.6875pt x 451.6875pt>
+[18 <./Rplot11.png>]
+<Rplot12.png, id=96, 451.6875pt x 451.6875pt>
 File: Rplot12.png Graphic file (type png)
 <use Rplot12.png>
-Package pdftex.def Info: Rplot12.png  used on input line 590.
+Package pdftex.def Info: Rplot12.png  used on input line 630.
 (pdftex.def)             Requested size: 317.07614pt x 317.09575pt.
 
-Overfull \hbox (31.7789pt too wide) in paragraph at lines 598--598
+Overfull \hbox (31.7789pt too wide) in paragraph at lines 638--638
  []\OT1/cmtt/m/n/12 plot(x_t_minus_2_noise, x_t_noise, type="b", col="purple", pch=16,[] 
  []
 
 
-Overfull \hbox (7.07889pt too wide) in paragraph at lines 598--598
+Overfull \hbox (7.07889pt too wide) in paragraph at lines 638--638
  []\OT1/cmtt/m/n/12 xlab="x_{t-2}", ylab="x_t", main="x_t vs. x_{t-2} with noise")[] 
  []
 
-<Rplot13.png, id=87, 451.6875pt x 451.6875pt>
+<Rplot13.png, id=97, 451.6875pt x 451.6875pt>
 File: Rplot13.png Graphic file (type png)
 <use Rplot13.png>
-Package pdftex.def Info: Rplot13.png  used on input line 600.
+Package pdftex.def Info: Rplot13.png  used on input line 640.
 (pdftex.def)             Requested size: 317.07614pt x 317.09575pt.
 
 
-[17 <./Rplot12.png>]
+[19 <./Rplot12.png>]
 
-[18 <./Rplot13.png>]
+[20 <./Rplot13.png>]
 
-[19] (./a3.aux)
+[21] (./a3.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3064 strings out of 475289
- 46722 string characters out of 5767260
+ 3078 strings out of 475289
+ 46972 string characters out of 5767260
  442665 words of memory out of 5000000
- 25929 multiletter control sequences out of 15000+600000
+ 25943 multiletter control sequences out of 15000+600000
  565781 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,9n,65p,247b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,65p,247b,511s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/Users/agarp/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on a3.pdf (19 pages, 195092 bytes).
+Output written on a3.pdf (21 pages, 205554 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

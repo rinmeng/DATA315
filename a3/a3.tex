@@ -477,7 +477,47 @@ main="x_t vs. x_{t-2} with noise")
                 \includegraphics[width=0.7\textwidth]{Rplot09.png}
             \end{center}
         \end{enumerate}
+        \item Repeating (d), (e) for 
+        \[ x_t = z_t \]
+\begin{verbatim}
+# (g)
+# Compute the sequence xt = zt
+x_values_noise2 <- numeric(length(t_values))
+x_values_noise2[1] <- x0
 
+for (t in 2:length(t_values)) {
+x_values_noise2[t] <- z_values[t-1]
+}
+
+# Extract x_t and x_{t-1} for noisy data
+x_t_noise2 <- x_values_noise2[-1]
+x_t_minus_1_noise2 <- x_values_noise2[-length(x_values_noise2)]
+
+# Plot x_t vs. x_{t-1} with noise
+plot(x_t_minus_1_noise2, x_t_noise2, type="b",
+col="green", pch=16,
+xlab="x_{t-1}", ylab="x_t",
+main="x_t vs. x_{t-1} with noise")
+\end{verbatim}
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{Rplot14.png}
+        \end{center}
+\begin{verbatim}
+# (h)
+# x_t vs. x_{t-2} with noise
+x_t_minus_2_noise2 <-
+x_values_noise2[-c(length(x_values_noise2),
+length(x_values_noise2)-1)]
+x_t_2_noise2 <- x_values_noise2[-c(1,2)]
+
+plot(x_t_minus_2_noise2, x_t_2_noise2, type="b",
+col="purple", pch=16,
+xlab="x_{t-2}", ylab="x_t",
+main="x_t vs. x_{t-2} with noise")
+\end{verbatim}
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{Rplot15.png}
+        \end{center}
     \end{enumerate}
 
     \item Given that $x_0 = 2$ and $x_1 = 1$ for
