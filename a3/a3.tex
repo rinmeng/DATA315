@@ -305,7 +305,46 @@ X-squared = 7.1631, df = 10, p-value = 0.71
         \hat{\sigma} = \sqrt{0.282} = 0.531
     \]
 
-    \item To be done
+    \item 
+    \begin{verbatim}
+        # Compute and display ACF
+library(RCMinification)
+# Load the data
+acf_values <- acf(longitudinalAcceleration, 
+                lag.max = 4, plot = FALSE)
+
+# Extract the first lag autocorrelation
+# First lag autocorrelation (index 2 because index 1 is lag 0)
+rho_1 <- acf_values$acf[2]
+
+# Compute theoretical autocorrelations
+rho_2 <- rho_1^2
+rho_3 <- rho_1^3
+rho_4 <- rho_1^4
+
+# Extract sample autocorrelations
+sample_rho_2 <- acf_values$acf[3]
+sample_rho_3 <- acf_values$acf[4]
+sample_rho_4 <- acf_values$acf[5]
+
+# Print comparisons
+cat("Theoretical vs. Sample Autocorrelations:\n")
+cat(sprintf("Lag 2: Theoretical = %.4f, 
+            Sample = %.4f\n", rho_2, sample_rho_2))
+cat(sprintf("Lag 3: Theoretical = %.4f, 
+            Sample = %.4f\n", rho_3, sample_rho_3))
+cat(sprintf("Lag 4: Theoretical = %.4f, 
+            Sample = %.4f\n", rho_4, sample_rho_4))
+
+# Printed output
+Theoretical vs. Sample Autocorrelations:
+Lag 2: Theoretical = 0.0201, Sample = 0.0689
+Lag 3: Theoretical = 0.0028, Sample = 0.0141
+Lag 4: Theoretical = 0.0004, Sample = 0.0221
+    \end{verbatim}
+    Since the sample autocorrelations are greater than the theoretical autocorrelations (in many deviations),
+    then this data is not consistent for an AR(1) model, also, if it was AR(1), there would have been a decay
+    pattern in the ACF, which is not the case here.
     
     \item Given the TS
     \[ x_t = 0.5x_{t-1} \]
