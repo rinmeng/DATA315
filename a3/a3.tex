@@ -299,7 +299,211 @@ X-squared = 7.1631, df = 10, p-value = 0.71
         \hat{\sigma} = \sqrt{0.282} = 0.531
     \]
 
-    \item 
+    \item To be done
+    
+    \item Given the TS
+    \[ x_t = 0.5x_{t-1} \]
+    for $t = 1,2, \ldots, n$ and $x_0 = 0$.
 
+    \begin{enumerate}
+        \item $x_1$ and $x_2$ can be found by,
+        \[ x_1 = 0.5x_0 = 0.5(0) = 0 \]
+        \[ x_2 = 0.5x_1 = 0.5(0) = 0 \]
+        \item A formula for $x_t$ in terms of $t$ is
+        \[ x_t = 0 \]
+        \item The $\lim_{t \to \infty} x_t$ is
+        \[ \lim_{t \to \infty} x_t = 0 \]
+        \item Repeating (a), (b), and (c) for where $x_0 = 1$.
+        \[ x_1 = 0.5x_0 = 0.5(1) = 0.5 \]
+        \[ x_2 = 0.5x_1 = 0.5(0.5) = 0.25 \]
+        \[ \lim_{t \to \infty} x_t = 0 \]
+        because of geometric sequence convergence.
+    \end{enumerate}
+
+    \item Given that $x_0 = 10$ and 
+    \[ x_t = 0.8x_{t-1} \] for $t = 1, 2, 3, \ldots, n$.
+
+    \begin{enumerate}
+        \item $x_1, x_2, x_3, x_4$ can be found,
+        \[ x_1 = 0.8x_0 = 0.8(10) = 8 \]
+        \[ x_2 = 0.8x_1 = 0.8(8) = 6.4 \]
+        \[ x_3 = 0.8x_2 = 0.8(6.4) = 5.12 \]
+        \[ x_4 = 0.8x_3 = 0.8(5.12) = 4.096 \]
+        \item A formula for $x_t$ in terms of $t$ is
+        \[ x_t = 10(0.8)^t \]
+        \item The $\lim_{t \to \infty} x_t$ is
+        \[ \lim_{t \to \infty} x_t = 0 \]
+        \item Sketching the plot of $x_t$ vs. 
+        $x_{t-1}$ for $t = 1, 2, 3, \ldots, 10$
+        \begin{verbatim}
+# Initial value
+x0 <- 10
+
+# Part (a): Compute the sequence xt = 0.8 * xt-1
+t_values <- 0:10
+x_values <- numeric(length(t_values))
+x_values[1] <- x0
+
+for (t in 2:length(t_values)) {
+    x_values[t] <- 0.8 * x_values[t-1]
+}
+
+# Extract x_t and x_{t-1}
+x_t <- x_values[-1]  # Remove x0
+x_t_minus_1 <- x_values[-length(x_values)]  # Remove last value
+
+# Plot x_t vs. x_{t-1}
+plot(x_t_minus_1, x_t, type="b", col="blue", pch=16, 
+xlab="x_{t-1}", ylab="x_t", main="x_t vs. x_{t-1}")
+
+\end{verbatim}
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{Rplot06.png}
+        \end{center}
+        \item Sketching the plot of $x_t$ vs. 
+        $x_{t-2}$ for $t = 2, 3, 4, \ldots, 10$
+\begin{verbatim}
+# Part (e): Plot x_t vs. x_{t-2}
+x_t_minus_2 <- x_values[-c(length(x_values), 
+length(x_values)-1)]  # Remove last two
+x_t_2 <- x_values[-c(1,2)]  # Remove first two
+
+plot(x_t_minus_2, x_t_2, type="b", col="red", pch=16, 
+xlab="x_{t-2}", ylab="x_t", main="x_t vs. x_{t-2}")
+\end{verbatim}
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{Rplot07.png}
+        \end{center}
+        \item Repeating (a), (b), (c), (d), and (e) for 
+        \[ x_t = 0.8x_{t-1} + z_t \]
+        where $z_t, \ldots, z_n$ take on the values
+        \[ \{ -1.2, 0.2, -1.0, 0.5, 1.7, -0.5, -2.1, 1.0, 0.8, -0.1 \}\]
+        \begin{enumerate}
+            \item $x_1, x_2, x_3, x_4$ can be found,
+            \[ x_1 = 0.8x_0 + z_1 = 0.8(10) - 1.2 = 8 - 1.2 = 6.8 \]
+            \[ x_2 = 0.8x_1 + z_2 = 0.8(6.8) + 0.2 = 5.44 + 0.2 = 5.64 \]
+            \[ x_3 = 0.8x_2 + z_3 = 0.8(5.64) - 1.0 = 4.512 - 1.0 = 3.512 \]
+            \[ x_4 = 0.8x_3 + z_4 = 0.8(3.512) + 0.5 = 2.8096 + 0.5 = 3.3096 \]
+            \item A formula for $x_t$ in terms of $t$ is
+            \[ x_t = 10(0.8)^t + \sum_{i=1}^{t} z_i \]
+            \item The $\lim_{t \to \infty} x_t$ is
+            \[ \lim_{t \to \infty} x_t = 0 \]
+            \item Sketching the plot of $x_t$ vs.
+            $x_{t-1}$ for $t = 1, 2, 3, \ldots, 10$
+\begin{verbatim}
+# Part (f): Compute the noisy sequence xt = 0.8 * xt-1 + zt
+z_values <- c(-1.2, 0.2, -1.0, 0.5, 1.7, 
+-0.5, -2.1, 1.0, 0.8, -0.1)
+x_values_noise <- numeric(length(t_values))
+x_values_noise[1] <- x0
+
+for (t in 2:length(t_values)) {
+x_values_noise[t] <- 0.8 * x_values_noise[t-1] 
++ z_values[t-1]
+}
+
+# Extract x_t and x_{t-1} for noisy data
+x_t_noise <- x_values_noise[-1]
+x_t_minus_1_noise <- x_values_noise[-length(x_values_noise)]
+
+plot(x_t_minus_1_noise, x_t_noise, type="b", 
+col="green", pch=16, 
+xlab="x_{t-1}", ylab="x_t", 
+main="x_t vs. x_{t-1} with noise")
+\end{verbatim}
+            \begin{center}
+                \includegraphics[width=0.7\textwidth]{Rplot08.png}
+            \end{center}
+            \item Sketching the plot of $x_t$ vs.
+            $x_{t-2}$ for $t = 2, 3, 4, \ldots, 10$
+\begin{verbatim}
+# Part (e) with noise: x_t vs. x_{t-2}
+x_t_minus_2_noise <- 
+x_values_noise[-c(length(x_values_noise),
+ length(x_values_noise)-1)]
+x_t_2_noise <- x_values_noise[-c(1,2)]
+
+plot(x_t_minus_2_noise, x_t_2_noise, type="b", 
+col="purple", pch=16, 
+xlab="x_{t-2}", ylab="x_t", 
+main="x_t vs. x_{t-2} with noise")
+\end{verbatim}
+            \begin{center}
+                \includegraphics[width=0.7\textwidth]{Rplot09.png}
+            \end{center}
+        \end{enumerate}
+
+    \end{enumerate}
+
+    \item Given that $x_0 = 2$ and $x_1 = 1$ for
+    \[ x_t = 0.8x_{t-1} - 0.7x_{t-2} \]
+    for $t = 2, 3, 4, \ldots, n$
+    \begin{enumerate}
+        \item $x_2, x_3, x_4$ can be found,
+        \[ 
+        x_2 = 0.8x_1 - 0.7x_0 = 0.8(1) - 0.7(2) 
+        = 0.8 - 1.4 = -0.6
+        \]
+        \[
+        x_3 = 0.8x_2 - 0.7x_1 = 0.8(-0.6) - 0.7(1)
+        = -0.48 - 0.7 = -1.18
+        \]
+        \[
+        x_4 = 0.8x_3 - 0.7x_2 = 0.8(-1.18) - 0.7(-0.6)
+        = -0.944 - (-0.42) = -0.524
+        \]
+        \item The sketched plot of $x_t$ vs. $x_{t-1}$ is
+        for $t = 2, 3, \ldots, 10$ is shown below.
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{Rplot10.png}
+        \end{center}
+        \item The sketched plot of $x_t$ vs. $x_{t-2}$ is
+        for $t = 2, 3, \ldots, 10$ is shown below.
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{Rplot11.png}
+        \end{center}
+        \item Repeat (a), (b), and (c) for
+        \[ x_t = 0.8x_{t-1} - 0.7x_{t-2} + z_t \]
+        where $z_2, \ldots, z_{11}$ take on the values
+        \[ 
+        \{ -1.2, 0.2, -1.0, 0.5, 1.7, -0.5, -2.1, 1.0, 0.8, -0.1 \} 
+        \]
+        \begin{enumerate}
+            \item $x_2, x_3, x_4$ can be found,
+            \[ 
+            x_2 = 0.8x_1 - 0.7x_0 + z_2 
+            = 0.8(1) - 0.7(2) + 0.2
+            = 0.8 - 1.4 + 0.2 = -0.4
+            \]
+            \[
+            x_3 = 0.8x_2 - 0.7x_1 + z_3 
+            \]
+            \[
+            = 0.8(-0.4) - 0.7(1) - 1.0
+            = -0.32 - 0.7 - 1.0 = -2.02
+            \]
+            \[
+            x_4 = 0.8x_3 - 0.7x_2 + z_4  
+            \]
+            \[
+            = 0.8(-2.02) - 0.7(-0.4) + 0.5
+            = -1.616 - 0.28 + 0.5 = -1.396
+            \]
+            \item The sketched plot of $x_t$ vs. $x_{t-1}$ is
+            for $t = 2, 3, \ldots, 10$ is shown below.
+            \begin{center}
+                \includegraphics[width=0.7\textwidth]{Rplot12.png}
+            \end{center}
+            \item The sketched plot of $x_t$ vs. $x_{t-2}$ is
+            for $t = 2, 3, \ldots, 10$ is shown below.
+            \begin{center}
+                \includegraphics[width=0.7\textwidth]{Rplot13.png}
+            \end{center}
+        \end{enumerate}
+    \end{enumerate}
+    \item The given TS
+    \[ x_t = 0.8x_{t-1} + z_t \]
+    $z_t \sim N(0, 1)$ and $x_0 = 0$.
+    
 \end{enumerate}
 \end{document}
