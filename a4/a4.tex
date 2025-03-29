@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage[a4paper, margin=1in]{geometry}
+\allowdisplaybreaks[1]
+
+\title{DATA315 Assignment 4}
+\author{Rin Meng 51940633}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $z_t = 0.4z_{t-3} + \varepsilon_t$ is an order 3 autoregressive model, AR(3). 
+        Since the $\phi = 0.4$ is less than 1, the process is stationary.
+        \item $z_t = 0.7z_{t-1} - 1.2z_{t-2} + \varepsilon_t$  is an order 2 autoregressive model, AR(2).
+        The characteristic polynomial is $1 - 0.7B - 1.2B^2 = 0$. 
+        The roots of the characteristic polynomial are $B_1 = - \frac{5}{4}$ and $B_2 = \frac{2}{3}$, 
+        thus the process is stationary.
+        \item $z_t = - 0.2z_{t-1} -1.2z_{t-3} + \varepsilon_t$ is an order 3 autoregressive model, AR(3).
+        The characteristic polynomial is $1 + 0.2B + 1.2B^3 = 0$.
+        The roots of the characteristic polynomial are $B \simeq -0.88$, thus the process is stationary.
+        \item $z_t = 0.7 z_{t-1} - 0.2 z_{t-2} + 0.1 z_{t-3} + 0.4 z_{t-4} + \varepsilon_t$ is an order 4 autoregressive model, AR(4).
+        The characteristic polynomial is $1 - 0.7B + 0.2B^2 - 0.1B^3 - 0.4B^4 = 0$. 
+        The roots of the characteristic polynomial are $B_1 \simeq 1$, $B_2 \simeq -1.6852$, thus the process is non-stationary.
+        \item $z_t = z_{t-1} - 2 z_{t-2} + 3 z_{t-3} + 4 z_{t-4} + \varepsilon_t$ is an order 4 autoregressive model, AR(4).
+        The characteristic polynomial is $1 - B + 2B^2 - 3B^3 - 4B^4 = 0$. 
+        The roots of the characteristic polynomial are $B_1 \simeq 0.59105$, $B_2 \simeq -1.35538$, thus the process is non-stationary. 
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Given that 
+        \[ z_t = -0.2 z_{t-2} + \varepsilon_t, \sigma^2_{\varepsilon} = 9 \]
+        \begin{itemize}
+            \item $E[z_t] = 0$ since $E[\varepsilon_t] = 0$.
+            \item $Var(z_t) = 0.2^2 Var(z_{t-2}) + Var(\varepsilon_t)$, since this is a stationary process, 
+            we have $Var(z_t) = Var(z_{t-2})$. $\gamma_0 = 0.2^2 \gamma_0 + 9$, 
+            thus $\gamma_0 = \frac{9}{1 - 0.2^2} = \frac{9}{0.96} = 9.375$.
+            \item $\rho_1 = \frac{\gamma_1}{\gamma_0} = \frac{0}{9.375} = 0$.
+            \item $\rho_2 = \frac{\gamma_2}{\gamma_0}$, where $\gamma_2 = -0.2 \times 9.375 = -1.875$,
+            thus $\rho_2 = \frac{-1.875}{9.375} = -0.2$.
+        \end{itemize}   
+        \item Given that
+        \[ z_t = - 0.8 z_{t-1} + 0.1 z_{t-2} + \varepsilon_t, \sigma^2_{\varepsilon} = 4 \]
+        \begin{itemize}
+            \item $E[z_t] = 0$ since $E[\varepsilon_t] = 0$.
+            \item $Var(z_t) = (-0.8)^2 Var(z_{t-1}) + (0.1)^2 Var(z_{t-2}) + Var(\varepsilon_t)$, 
+            since this is a stationary process, we have $Var(z_t) = Var(z_{t-1}) = Var(z_{t-2})$. 
+            $\gamma_0 = 0.64 \gamma_0 + 0.01 \gamma_0 + 4$, thus $\gamma_0 = \frac{4}{1 - 0.65} = \frac{4}{0.35} = 11.42857$.
+            \item $\rho_1 = \frac{\gamma_1}{\gamma_0} = \frac{-0.8 \times 11.42857}{11.42857} = -0.8$.
+            \item $\rho_2 = \frac{\gamma_2}{\gamma_0}$, where $\gamma_2 = (0.8)^2 \times 11.42857 + (0.1)^2 \times 11.42857 = 7.142857$,
+            thus $\rho_2 = \frac{7.142857}{11.42857} = 0.62376$.
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
+ 
